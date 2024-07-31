@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Management</title>
+    <!-- <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+        }
+        .header {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+        .navbar {
+            overflow: hidden;
+            background-color: #333;
+        }
+        .navbar a {
+            float: left;
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 20px;
+            text-decoration: none;
+        }
+        .navbar a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+    </style> -->
+</head>
+<body>
+
+<div class="header">
+    <h1>Student Management</h1>
+</div>
+
+<nav class="navbar">
+    <div th:if="${session.user==null}">
+    <a href="/signup">Signup</a>
+    <a href="/login">Login</a>
+    </div>
+</nav>
+    <div th:if="${session.user}">
+        <a href="/insert"><button>Insert Student Details</button></a>
+        <a href="/fetch"><button>Fetch Student details</button></a>
+        <a href="/update"><button>Update Student details</button></a>
+        <a href="/delete"><button>Delete Student Details</button></a>
+        <a href="/logout"><button>Logout</button></a>
+    </div>
+
+<h1 th:text="${success}"></h1>
+<!-- Content goes here -->
+
+</body>
+</html>
